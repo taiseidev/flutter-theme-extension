@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:theme_extension_sample/widgets/button/primary_button.dart';
 import 'package:theme_extension_sample/widgets/button/primary_button_style.dart';
+import 'package:theme_extension_sample/widgets/button/secondary_button.dart';
+
+import 'widgets/button/secondary_button_style.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +20,9 @@ class MyApp extends StatelessWidget {
         extensions: const <ThemeExtension<dynamic>>[
           PrimaryButtonStyle(
             backgroundColor: Colors.deepPurple,
+          ),
+          SecondaryButtonStyle(
+            backgroundColor: Colors.black,
           ),
         ],
       ),
@@ -40,6 +46,12 @@ class _MyHomePageState extends State<MyHomePage> {
   void _incrementCounter() {
     setState(() {
       _counter++;
+    });
+  }
+
+  void _twiceIncrementCounter() {
+    setState(() {
+      _counter + 2;
     });
   }
 
@@ -69,10 +81,10 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () => _incrementCounter(),
               style: const PrimaryButtonStyle(backgroundColor: Colors.red),
             ),
-            PrimaryButton(
-              text: '+1',
-              onPressed: () => _incrementCounter(),
-              style: const PrimaryButtonStyle(backgroundColor: Colors.yellow),
+            SecondaryButton(
+              text: '+2',
+              onPressed: () => _twiceIncrementCounter(),
+              // style: const SecondaryButtonStyle(backgroundColor: Colors.green),
             ),
           ],
         ),
