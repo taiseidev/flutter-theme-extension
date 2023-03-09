@@ -64,6 +64,16 @@ class _MyHomePageState extends State<MyHomePage> {
               text: '+1',
               onPressed: () => _incrementCounter(),
             ),
+            PrimaryButton(
+              text: '+1',
+              onPressed: () => _incrementCounter(),
+              style: const PrimaryButtonStyle(backgroundColor: Colors.red),
+            ),
+            PrimaryButton(
+              text: '+1',
+              onPressed: () => _incrementCounter(),
+              style: const PrimaryButtonStyle(backgroundColor: Colors.yellow),
+            ),
           ],
         ),
       ),
