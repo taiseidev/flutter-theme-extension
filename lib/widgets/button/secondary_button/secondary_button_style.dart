@@ -7,3 +7,9 @@ part 'secondary_button_style.tailor.dart';
 class _$SecondaryButtonStyle {
   static List<Color> backgroundColor = [Colors.purple];
 }
+
+// SecondaryButtonの標準スタイルを取得する
+ThemeExtension<SecondaryButtonStyle> getSecondaryButtonStyle() =>
+    const SecondaryButtonStyle(
+      backgroundColor: Colors.black,
+    );

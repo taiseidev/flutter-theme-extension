@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theme_extension_sample/widgets/button/secondary_button_style.dart';
+import 'package:theme_extension_sample/widgets/button/secondary_button/secondary_button_style.dart';
 
 class SecondaryButton extends StatelessWidget {
   const SecondaryButton({
@@ -18,6 +18,7 @@ class SecondaryButton extends StatelessWidget {
     final defaultStyle = Theme.of(context).extension<SecondaryButtonStyle>()!;
     final backgroundColor =
         style?.backgroundColor ?? defaultStyle.backgroundColor;
+
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: backgroundColor,

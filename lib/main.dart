@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:theme_extension_sample/widgets/button/primary_button.dart';
 import 'package:theme_extension_sample/widgets/button/primary_button_style.dart';
-import 'package:theme_extension_sample/widgets/button/secondary_button.dart';
 
-import 'widgets/button/secondary_button_style.dart';
+import 'widgets/button/secondary_button/secondary_button.dart';
+import 'widgets/button/secondary_button/secondary_button_style.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,13 +17,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        extensions: const <ThemeExtension<dynamic>>[
-          PrimaryButtonStyle(
+        extensions: <ThemeExtension<dynamic>>[
+          const PrimaryButtonStyle(
             backgroundColor: Colors.deepPurple,
           ),
-          SecondaryButtonStyle(
-            backgroundColor: Colors.black,
-          ),
+          getSecondaryButtonStyle(),
         ],
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -84,7 +82,6 @@ class _MyHomePageState extends State<MyHomePage> {
             SecondaryButton(
               text: '+2',
               onPressed: () => _twiceIncrementCounter(),
-              // style: const SecondaryButtonStyle(backgroundColor: Colors.green),
             ),
           ],
         ),
